@@ -1,0 +1,77 @@
+.has-search .form-control {
+	padding-left: 2.375rem;
+}
+
+.wrapper {
+	padding-bottom: 6rem;
+}
+
+#search-filter {
+	padding-top: 6rem;
+}
+
+.has-search .form-control-feedback {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	width: 2.375rem;
+	height: 2.375rem;
+	line-height: 2.375rem;
+	text-align: center;
+	pointer-events: none;
+	color: #aaa;
+}
+
+.navbar-badge {
+	font-size: 0.6rem;
+	font-weight: 300;
+	padding: 2px 4px;
+	position: absolute;
+	right: 5px;
+	top: 9px;
+}
+
+.user-panel {
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.btn-pink {
+	background-color: var(--pink) !important;
+	border: 1px solid var(--pink) !important;
+	color: #fff !important;
+}
+
+#button-categories {
+	width: 100%;
+	overflow: hidden; /* Hide both horizontal and vertical overflow */
+	position: relative; /* Create a positioning context for the scroll container */
+}
+
+.scroll-container {
+	width: 100%;
+	overflow-x: scroll; /* Enable horizontal scrolling when content overflows */
+	white-space: nowrap; /* Prevent line breaks for inline elements */
+	scrollbar-width: none; /* Hide the default scrollbar for Firefox */
+	-ms-overflow-style: scrollbar; /* Hide the default scrollbar for Internet Explorer and Edge */
+	/* Optionally, add a gradient background to indicate scrollable content */
+	background: linear-gradient(to right, transparent, white 20px);
+}
+
+/* Hide the native scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
+.scroll-container::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+/* Style Edge's scrollbar to make it less intrusive */
+.scroll-container::-ms-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+.scroll-container::-ms-scrollbar-thumb {
+	background-color: transparent;
+}
