@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index() {
-		$this->load->view('dashboard');
+		$this->load->view('home');
 	}
 
 	public function categories() {
@@ -36,8 +36,28 @@ class Welcome extends CI_Controller {
 		echo json_encode($categories);
 	}
 
+	public function top_categories() {
+		$contents = file_get_contents('https://64cc65872eafdcdc8519cbdf.mockapi.io/products');
+		$data = json_decode($contents, TRUE);
+		$categories = []; $showed_categories = [];
+
+		foreach ($data as $key => $value) {
+			if (array_key_exists($value['category'], $categories)) {
+				$categories[$value['category']] = $categories[$value['category']] + 1;
+			} else {
+				$categories[$value['category']] = 1;
+			}
+		}
+
+		arsort($categories);
+		$categories = array_slice($categories, 0, 10);
+
+		foreach ($categories as $key => $value) $showed_categories[] = $key;
+
+		echo json_encode($showed_categories);
+	}
+
 	public function products(){
-		// $input = $this->input->post();
 		$contents = file_get_contents('https://64cc65872eafdcdc8519cbdf.mockapi.io/products');
 		$data = json_decode($contents, TRUE);
 

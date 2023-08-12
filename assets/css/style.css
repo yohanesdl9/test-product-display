@@ -2,12 +2,12 @@
 	padding-left: 2.375rem;
 }
 
-.wrapper {
-	padding-bottom: 6rem;
+#search-filter {
+	padding-top: 5rem;
 }
 
-#search-filter {
-	padding-top: 6rem;
+.wrapper {
+	padding-bottom: 6rem;
 }
 
 .has-search .form-control-feedback {
@@ -33,8 +33,7 @@
 
 .user-panel {
 	position: relative;
-	width: 100%;
-	padding: 10px;
+	width: 60%;
 	overflow: hidden;
 }
 
@@ -45,33 +44,18 @@
 }
 
 #button-categories {
-	width: 100%;
-	overflow: hidden; /* Hide both horizontal and vertical overflow */
-	position: relative; /* Create a positioning context for the scroll container */
+  overflow-x: auto;        /* Enable horizontal scrolling */
+  overflow-y: hidden;     /* Hide vertical scrolling */
+  white-space: nowrap;    /* Prevent button elements from wrapping */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+	/* -ms-overflow-style: touch; */
 }
 
-.scroll-container {
-	width: 100%;
-	overflow-x: scroll; /* Enable horizontal scrolling when content overflows */
-	white-space: nowrap; /* Prevent line breaks for inline elements */
-	scrollbar-width: none; /* Hide the default scrollbar for Firefox */
-	-ms-overflow-style: scrollbar; /* Hide the default scrollbar for Internet Explorer and Edge */
-	/* Optionally, add a gradient background to indicate scrollable content */
-	background: linear-gradient(to right, transparent, white 20px);
+::-webkit-scrollbar {
+	display: flex;
 }
 
-/* Hide the native scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
-.scroll-container::-webkit-scrollbar {
-	width: 0;
-	height: 0;
-}
-
-/* Style Edge's scrollbar to make it less intrusive */
-.scroll-container::-ms-scrollbar {
-	width: 0;
-	height: 0;
-}
-
-.scroll-container::-ms-scrollbar-thumb {
-	background-color: transparent;
+/* Optional: Add some padding to improve the appearance */
+#button-categories > input {
+  margin-right: 10px;     /* Add some space between buttons */
 }
